@@ -8,7 +8,7 @@ import axios from "axios";
 // 3. useQuery return an object with many properties
 
 const getPlayers = () => {
-  return axios.get("http://localhost:4400/playerss");
+  return axios.get("http://localhost:4400/players");
 };
 
 const Players = () => {
