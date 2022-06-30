@@ -7,6 +7,7 @@ import axios from "axios";
 // 2. a function
 // 3. useQuery return an object with many properties
 // 4. is's accept third option like object which configure more things, loke cache time
+// 5. useQuery automatically refetch data after every 5 minutes 
 
 const getPlayers = () => {
   return axios.get("http://localhost:4400/players");
@@ -18,7 +19,13 @@ const Players = () => {
     getPlayers,
     {
       // defalut cache time is 5 minutes
-      cacheTime: 60000,
+      // cacheTime: 60000,
+
+      // stop background refetch by staleTime 
+      // default value of staleTime is 0
+      // there is no background fetching between 30000 mili second
+      staleTime: 30000,
+
     }
   );
 
