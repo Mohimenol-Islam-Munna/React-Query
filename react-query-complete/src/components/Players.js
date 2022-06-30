@@ -48,29 +48,28 @@ const Players = () => {
       // Then we call this by button click. Default value is true .
       enabled: false,
 
+      // data transformation 
       select: (data) => {
         const playerName = data?.data.map((player) => player.name);
-        console.log("playerName ::", playerName);
         return playerName;
       },
 
       onSuccess: (data) => {
         console.log("data fetch successful ::", data);
       },
+      
       onError: (err) => {
         console.log("data fetch does not successful ::", err);
       },
     }
   );
 
-  console.log("isLoading ::::: data", data);
 
   if (isLoading) {
     return <h2>Loading...</h2>;
   }
 
   if (isError) {
-    console.log("error ::", error);
     return <h2>{error.message}</h2>;
   }
 
