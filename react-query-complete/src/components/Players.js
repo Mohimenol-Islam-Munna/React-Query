@@ -2,12 +2,12 @@ import React from "react";
 import { useQuery } from "react-query";
 import axios from "axios";
 
-// useQuery accept two arguments
+// useQuery accept required two arguments
 // 1. unique name
 // 2. a function
 // 3. useQuery return an object with many properties
 // 4. is's accept third option like object which configure more things, loke cache time
-// 5. useQuery automatically refetch data after every 5 minutes 
+// 5. useQuery automatically refetch data after every 5 minutes
 
 const getPlayers = () => {
   return axios.get("http://localhost:4400/players");
@@ -18,14 +18,22 @@ const Players = () => {
     "Players",
     getPlayers,
     {
+      // cacheTime
+      // It refetch data in background after certain time
       // defalut cache time is 5 minutes
       // cacheTime: 60000,
+      // -------- 
 
-      // stop background refetch by staleTime 
+      // staleTime
+      // It stop background refetch for specific time
       // default value of staleTime is 0
       // there is no background fetching between 30000 mili second
-      staleTime: 30000,
-
+      // staleTime: 30000,
+      // -------- 
+      
+      // refetchOnMount
+      // It fetch data when component is mount. This is like similar to any react component data fetching.
+      // It has three value true(fetch data every rendering/mount), false(fetch data in initial rendering/mount), always (fetch data every rendering/mount)
     }
   );
 
