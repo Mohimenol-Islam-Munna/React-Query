@@ -6,13 +6,23 @@ import axios from "axios";
 // 1. unique name
 // 2. a function
 // 3. useQuery return an object with many properties
+// 4. is's accept third option like object which configure more things, loke cache time
 
 const getPlayers = () => {
   return axios.get("http://localhost:4400/players");
 };
 
 const Players = () => {
-  const { isLoading, isError, error, data } = useQuery("Players", getPlayers);
+  const { isLoading, isError, error, data, isFetching } = useQuery(
+    "Players",
+    getPlayers,
+    {
+      // defalut cache time is 5 minutes
+      cacheTime: 60000,
+    }
+  );
+
+  console.log("isLoading ::::: isFetching", isLoading, ":::::", isFetching);
 
   if (isLoading) {
     return <h2>Loading...</h2>;
