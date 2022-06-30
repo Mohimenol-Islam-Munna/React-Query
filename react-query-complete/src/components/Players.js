@@ -47,6 +47,13 @@ const Players = () => {
       // enabled true or false. when its value is false then it's initial call in component render or mount is paused.
       // Then we call this by button click. Default value is true .
       enabled: false,
+
+      select: (data) => {
+        const playerName = data?.data.map((player) => player.name);
+        console.log("playerName ::", playerName);
+        return playerName;
+      },
+
       onSuccess: (data) => {
         console.log("data fetch successful ::", data);
       },
@@ -56,7 +63,7 @@ const Players = () => {
     }
   );
 
-  console.log("isLoading ::::: isFetching", isLoading, ":::::", isFetching);
+  console.log("isLoading ::::: data", data);
 
   if (isLoading) {
     return <h2>Loading...</h2>;
@@ -71,7 +78,7 @@ const Players = () => {
     <div>
       <h2>Players List</h2>
       <button onClick={refetch}>Get Player List</button>
-      {data?.data.map((player) => (
+      {/* {data?.data.map((player) => (
         <div
           key={player.id}
           style={{
@@ -84,7 +91,22 @@ const Players = () => {
           <h3>Name : {player.name}</h3>
           <h4>Jersy : {player.jersy}</h4>
         </div>
-      ))}
+      ))} */}
+
+      {data &&
+        data.map((playerName, index) => (
+          <div
+            key={index}
+            style={{
+              width: "40%",
+              padding: "10px",
+              backgroundColor: "lightgray",
+              margin: "10px auto 0px",
+            }}
+          >
+            <h3>Name : {playerName}</h3>
+          </div>
+        ))}
     </div>
   );
 };
