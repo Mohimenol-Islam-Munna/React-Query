@@ -44,8 +44,15 @@ const Players = () => {
       // For always fetching data it take helps of refetchIntervalInBackground
       // refetchIntervalInBackground: true,
       // --------
-      // enabled true or false. when its value is false then it's initial call in component render or mount is paused. Then we call this by button click. Default value is true .
+      // enabled true or false. when its value is false then it's initial call in component render or mount is paused.
+      // Then we call this by button click. Default value is true .
       enabled: false,
+      onSuccess: (data) => {
+        console.log("data fetch successful ::", data);
+      },
+      onError: (err) => {
+        console.log("data fetch does not successful ::", err);
+      },
     }
   );
 
