@@ -2,7 +2,7 @@ import React from "react";
 import { QueryClient, QueryClientProvider } from "react-query";
 import "./App.css";
 
-import User from "./components/User";
+import User from "./components/Players";
 
 // creact query client
 const queryClient = new QueryClient();

@@ -3,35 +3,35 @@
     {
       "id": 1,
       "name": "leo messi",
-      "jesy": 10,
+      "jersy": 10,
       "club": "psg",
       "country": "argentina"
     },
     {
       "id": 2,
       "name": "ronaldo",
-      "jesy": 7,
+      "jersy": 7,
       "club": "mu",
       "country": "portugal"
     },
     {
       "id": 3,
       "name": "hazard",
-      "jesy": 10,
+      "jersy": 10,
       "club": "rm",
       "country": "belgium"
     },
     {
       "id": 4,
       "name": "benzema",
-      "jesy": 9,
+      "jersy": 9,
       "club": "rm",
       "country": "france"
     },
     {
       "id": 5,
       "name": "nymer",
-      "jesy": 11,
+      "jersy": 11,
       "club": "psg",
       "country": "brazil"
     }
