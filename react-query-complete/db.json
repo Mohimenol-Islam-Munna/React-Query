@@ -1,0 +1,39 @@
+{
+  "players": [
+    {
+      "id": 1,
+      "name": "leo messi",
+      "jesy": 10,
+      "club": "psg",
+      "country": "argentina"
+    },
+    {
+      "id": 2,
+      "name": "ronaldo",
+      "jesy": 7,
+      "club": "mu",
+      "country": "portugal"
+    },
+    {
+      "id": 3,
+      "name": "hazard",
+      "jesy": 10,
+      "club": "rm",
+      "country": "belgium"
+    },
+    {
+      "id": 4,
+      "name": "benzema",
+      "jesy": 9,
+      "club": "rm",
+      "country": "france"
+    },
+    {
+      "id": 5,
+      "name": "nymer",
+      "jesy": 11,
+      "club": "psg",
+      "country": "brazil"
+    }
+  ]
+}
