@@ -8,14 +8,19 @@ import axios from "axios";
 // 3. useQuery return an object with many properties
 
 const getPlayers = () => {
-  return axios.get("http://localhost:4400/players");
+  return axios.get("http://localhost:4400/playerss");
 };
 
 const Players = () => {
-  const { isLoading, error, data } = useQuery("Players", getPlayers);
+  const { isLoading, isError, error, data } = useQuery("Players", getPlayers);
 
   if (isLoading) {
     return <h2>Loading...</h2>;
+  }
+
+  if (isError) {
+    console.log("error ::", error);
+    return <h2>{error.message}</h2>;
   }
 
   return (
@@ -23,6 +28,7 @@ const Players = () => {
       <h2>Players List</h2>
       {data?.data.map((player) => (
         <div
+          key={player.id}
           style={{
             width: "40%",
             padding: "10px",
