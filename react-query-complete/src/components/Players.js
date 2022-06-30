@@ -14,7 +14,7 @@ const getPlayers = () => {
 };
 
 const Players = () => {
-  const { isLoading, isError, error, data, isFetching } = useQuery(
+  const { isLoading, isError, error, data, isFetching, refetch } = useQuery(
     "Players",
     getPlayers,
     {
@@ -23,21 +23,29 @@ const Players = () => {
       // defalut cache time is 5 minutes
       // cacheTime: 60000,
       // --------
-
       // staleTime
       // It stop background refetch for specific time
       // default value of staleTime is 0
       // there is no background fetching between 30000 mili second
       // staleTime: 30000,
       // --------
-
       // refetchOnMount
       // It fetch data when component is mount. This is like similar to any react component data fetching.
       // It has three value true(fetch data every rendering/mount), false(fetch data in initial rendering/mount), always (fetch data every rendering/mount)
-
       // refetchOnWindowFocus
       // It has three vlaue like refetchOnMount. default value is true
-      // refetchOnWindowFocus: true, 
+      // refetchOnWindowFocus: true,
+      // --------
+      // polling
+      // Its used for continuous data fetching
+      // refetchInterval polling data on every specific interval
+      // refetchInterval: 2000,
+      // It dont refetch data if window/browser lose focus
+      // For always fetching data it take helps of refetchIntervalInBackground
+      // refetchIntervalInBackground: true,
+      // --------
+      // enabled true or false. when its value is false then it's initial call in component render or mount is paused. Then we call this by button click. Default value is true .
+      enabled: false,
     }
   );
 
@@ -55,6 +63,7 @@ const Players = () => {
   return (
     <div>
       <h2>Players List</h2>
+      <button onClick={refetch}>Get Player List</button>
       {data?.data.map((player) => (
         <div
           key={player.id}
