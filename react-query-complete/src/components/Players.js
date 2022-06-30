@@ -22,18 +22,22 @@ const Players = () => {
       // It refetch data in background after certain time
       // defalut cache time is 5 minutes
       // cacheTime: 60000,
-      // -------- 
+      // --------
 
       // staleTime
       // It stop background refetch for specific time
       // default value of staleTime is 0
       // there is no background fetching between 30000 mili second
       // staleTime: 30000,
-      // -------- 
-      
+      // --------
+
       // refetchOnMount
       // It fetch data when component is mount. This is like similar to any react component data fetching.
       // It has three value true(fetch data every rendering/mount), false(fetch data in initial rendering/mount), always (fetch data every rendering/mount)
+
+      // refetchOnWindowFocus
+      // It has three vlaue like refetchOnMount. default value is true
+      // refetchOnWindowFocus: true, 
     }
   );
 
