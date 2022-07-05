@@ -3,7 +3,7 @@ import { QueryClient, QueryClientProvider } from "react-query";
 import { ReactQueryDevtools } from "react-query/devtools";
 import "./App.css";
 
-import User from "./components/Players";
+import Players from "./components/Players";
 
 // creact query client
 const queryClient = new QueryClient();
@@ -14,7 +14,7 @@ const App = () => {
       <div className="App">
         <h2>React Query Practice</h2>
         <div>
-          <User />
+          <Players />
         </div>
       </div>
       <ReactQueryDevtools initialIsOpen={false} position="bottom-right" />

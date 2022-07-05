@@ -2,7 +2,7 @@ import React from "react";
 import { useQuery } from "react-query";
 import axios from "axios";
 
-// useQuery accept required two arguments
+// useQuery accept two required  arguments
 // 1. unique name
 // 2. a function
 // 3. useQuery return an object with many properties
@@ -77,6 +77,8 @@ const Players = () => {
     <div>
       <h2>Players List</h2>
       <button onClick={refetch}>Get Player List</button>
+
+      {/* normal data showing  */}
       {/* {data?.data.map((player) => (
         <div
           key={player.id}
@@ -92,6 +94,7 @@ const Players = () => {
         </div>
       ))} */}
 
+      {/* transformation  */}
       {data &&
         data.map((playerName, index) => (
           <div
